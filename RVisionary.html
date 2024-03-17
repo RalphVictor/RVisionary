@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - RVisionary</title>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    
+    <header class="header">
+        <a href="#" class="logo">About the RVisionary</a>
+
+    </header>
+
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="Rvisionary.png" alt="">
+    
+        </div>
+
+        <div class="about-content">
+            <h2 class= "heading"><span>About</span></h2>
+            <h3>RVisionary is all About</h3>
+    
+            <p>
+                RVisionary is committed to driving business success through<br> 
+                innovative technology solutions tailored to each client's<br> 
+                unique needs. With a focus on strategic foresight and collaboration,<br> 
+                we offer a comprehensive range of services from software development<br> 
+                to IT consulting. By understanding our clients' goals and challenges,<br> 
+                we deliver solutions that not only address immediate needs but also<br> 
+                pave the way for long-term growth and innovation. At RVisionary, we're<br> 
+                more than just a technology company — we're partners in your journey to<br> 
+                success, dedicated to shaping the future of technology and transforming<br> 
+                the way businesses operate. Join us as we pioneer the path to digital<br> 
+                excellence together.<br> 
+            </p>
+            
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        
+let sections = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('header nav a');
+
+window.onscroll = () => {
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 150;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+
+        if (top >= offset && top < offset + height) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            document.querySelector('header nav a[href="#' + id + '"]').classList.add('active');
+        }
+    });
+};
+
+const scrollReveal = new ScrollReveal({
+    reset: true,
+    distance: '80px',
+    duration: 2000,
+    delay: 200
+});
+
+// Usage
+scrollReveal.reveal('.home-content, .heading', { origin: 'top' });
+scrollReveal.reveal('.home-img ', { origin: 'bottom' });
+scrollReveal.reveal('.home-content h1, .about-img', { origin: 'left' });
+scrollReveal.reveal('.logo', { origin: 'left' });
+scrollReveal.reveal('.about-content, .about-content p', { origin: 'top', distance: '50px', duration: 1000 });
+
+const typed = new Typed('.multiple-text', {
+    typeSpeed: 100,
+    backSpeed: 100,
+    backDelay: 1000,
+    loop: true
+});
+    </script>
+ </body>
+</html>
